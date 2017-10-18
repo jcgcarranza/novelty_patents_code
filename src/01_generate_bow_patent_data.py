@@ -2,13 +2,14 @@
 """
 Created on Mon Oct  2 18:04:45 2017
 
-@author: JC
+@author: Juan Carlos Gomez
+@email: jc.gomez@ugto.mx
 """
 
 import re
 from nltk.corpus import stopwords
 
-main_dir = 'C:/Users/JC/Documents/CodeandData/datasets/2017_new_paper_sam/'
+main_dir = 'C:/Users/JC/Documents/CodeandData/datasets/2017_novelty_patents/'
 
 patent_file = main_dir+'patent_data_no_family.txt'
 bow_file = main_dir+'patent_bow.txt'

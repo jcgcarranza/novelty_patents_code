@@ -2,10 +2,11 @@
 """
 Created on Thu Oct  5 12:11:19 2017
 
-@author: JC
+@author: Juan Carlos Gomez
+@email: jc.gomez@ugto.mx
 """
 
-main_dir = 'C:/Users/JC/Documents/CodeandData/datasets/2017_new_paper_sam/'
+main_dir = 'C:/Users/JC/Documents/CodeandData/datasets/2017_novelty_patents/'
 
 words_file = main_dir+'patent_words.txt'
 class_file = main_dir+'patent_classes.txt'

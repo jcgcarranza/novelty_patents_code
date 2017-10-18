@@ -2,7 +2,8 @@
 """
 Created on Thu Oct  5 12:11:19 2017
 
-@author: JC
+@author: Juan Carlos Gomez
+@email: jc.gomez@ugto.mx
 """
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -54,7 +55,7 @@ def collect_data_future(adate_focus, data, adates):
             sample.append(data.get(patent_id))
     return sample
 
-main_dir = 'C:/Users/JC/Documents/CodeandData/datasets/2017_new_paper_sam/'
+main_dir = 'C:/Users/JC/Documents/CodeandData/datasets/2017_novelty_patents/'
 class_dir = main_dir+'class_files/'
 
 sorted_file = main_dir+'award_control_sorted.txt'
@@ -66,7 +67,6 @@ print('Reading adates from patents...')
 adates_patents = read_adates_file(adates_file)
 
 dist = {}
-#i = 0
 j = 0
 print('Computing distances...')
 for classe,focal_ids in focal_patents.items():
@@ -83,7 +83,6 @@ for classe,focal_ids in focal_patents.items():
         fit_past = vec_past.fit_transform(sample_past)
         focus_past = fit_past[-1]
         fit_past = fit_past[:-1]
-        #focus_past = vec_past.transform([focus_patent])
         sim_past = cosine_similarity(focus_past,fit_past)
         sim_past = np.mean(sim_past[0])
         
@@ -93,7 +92,6 @@ for classe,focal_ids in focal_patents.items():
         fit_future =vec_future.fit_transform(sample_future)
         focus_future = fit_future[-1]
         fit_future = fit_future[:-1]
-        #focus_future = vec_future.transform([focus_patent])
         sim_future = cosine_similarity(focus_future,fit_future)
         sim_future = np.mean(sim_future[0])
         
@@ -101,7 +99,7 @@ for classe,focal_ids in focal_patents.items():
         j += 1
         print('\t\t',j)
 
-distances_file = main_dir+'cosine_similarities_award_control_v3.txt'        
+distances_file = main_dir+'cosine_similarities_award_control.txt'        
 with open(distances_file, 'w') as distances_writer:
     for focus_id,distances in dist.items():
         distances_writer.write('%s %.5f %.5f\n' % (focus_id,distances[0],distances[1]))

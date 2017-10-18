@@ -2,10 +2,11 @@
 """
 Created on Thu Oct  5 12:11:19 2017
 
-@author: JC
+@author: Juan Carlos Gomez
+@email: jc.gomez@ugto.mx
 """
 
-main_dir = 'C:/Users/JC/Documents/CodeandData/datasets/2017_new_paper_sam/'
+main_dir = 'C:/Users/JC/Documents/CodeandData/datasets/2017_novelty_patents/'
 
 focal_file = main_dir+'award_control_sample_grouped.txt'
 sorted_file = main_dir+'award_control_sorted.txt'
