@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#Specific file
+read_patent_data.py
